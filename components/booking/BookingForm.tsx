@@ -15,13 +15,13 @@ const BookingForm = () => {
   });
 
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {  
     e.preventDefault();
     setLoading(true);
     setError(null);
@@ -149,5 +149,6 @@ const BookingForm = () => {
       <CancellationPolicy />
     </>
   );
+}
 
 export default BookingForm;
