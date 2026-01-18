@@ -17,7 +17,7 @@ const BookingForm = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
